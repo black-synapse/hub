@@ -10,9 +10,9 @@ services:
     entrypoint: /docker-entrypoint.sh
     healthcheck:
        test:  [CMD, '/docker-healthcheck.sh']
-       interval: 30s
-       timeout: 10s
-       retries: 3
+       interval: 300s
+       timeout: 200s
+       retries: 10
     deploy:
       mode: replicated
       restart_policy: {condition: on-failure, delay: 5s, window: 60s}
